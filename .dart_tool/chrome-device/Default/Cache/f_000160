@@ -1,0 +1,558 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/memstuff/controllers/home_controller.dart', 'packages/memstuff/repositories/stuff_repository_impl.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/refresh_indicator.dart', 'packages/memstuff/widgets/stuff_listview.dart', 'packages/flutter_staggered_animations/src/animation_configuration.dart', 'packages/flutter_staggered_animations/src/slide_animation.dart', 'packages/flutter_staggered_animations/src/fade_in_animation.dart', 'packages/memstuff/widgets/stuff_card.dart', 'packages/flutter/src/material/page.dart', 'packages/memstuff/pages/detail_page.dart', 'packages/memstuff/helpers/snackbar_helper.dart', 'packages/memstuff/models/stuff_model.dart'], (function load__packages__memstuff__pages__home_page_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__memstuff__controllers__home_controller$46dart, packages__memstuff__repositories__stuff_repository_impl$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__refresh_indicator$46dart, packages__memstuff__widgets__stuff_listview$46dart, packages__flutter_staggered_animations__src__animation_configuration$46dart, packages__flutter_staggered_animations__src__slide_animation$46dart, packages__flutter_staggered_animations__src__fade_in_animation$46dart, packages__memstuff__widgets__stuff_card$46dart, packages__flutter__src__material__page$46dart, packages__memstuff__pages__detail_page$46dart, packages__memstuff__helpers__snackbar_helper$46dart, packages__memstuff__models__stuff_model$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const home_controller = packages__memstuff__controllers__home_controller$46dart.controllers__home_controller;
+  const stuff_repository_impl = packages__memstuff__repositories__stuff_repository_impl$46dart.repositories__stuff_repository_impl;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const floating_action_button = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const refresh_indicator = packages__flutter__src__material__refresh_indicator$46dart.src__material__refresh_indicator;
+  const stuff_listview = packages__memstuff__widgets__stuff_listview$46dart.widgets__stuff_listview;
+  const animation_configuration = packages__flutter_staggered_animations__src__animation_configuration$46dart.src__animation_configuration;
+  const slide_animation = packages__flutter_staggered_animations__src__slide_animation$46dart.src__slide_animation;
+  const fade_in_animation = packages__flutter_staggered_animations__src__fade_in_animation$46dart.src__fade_in_animation;
+  const stuff_card = packages__memstuff__widgets__stuff_card$46dart.widgets__stuff_card;
+  const page = packages__flutter__src__material__page$46dart.src__material__page;
+  const detail_page = packages__memstuff__pages__detail_page$46dart.pages__detail_page;
+  const snackbar_helper = packages__memstuff__helpers__snackbar_helper$46dart.helpers__snackbar_helper;
+  const stuff_model = packages__memstuff__models__stuff_model$46dart.models__stuff_model;
+  var home_page = Object.create(dart.library);
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    VoidTodynamic: () => (T.VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))(),
+    DetailPageL: () => (T.DetailPageL = dart.constFn(dart.legacy(detail_page.DetailPage)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToDetailPageL: () => (T.BuildContextLToDetailPageL = dart.constFn(dart.fnType(T.DetailPageL(), [T.BuildContextL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 34,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 22,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 27,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 9,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "loading",
+        [_Location_column]: 11,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 11,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 11,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onRefresh",
+        [_Location_column]: 9,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "floatingActionButton",
+        [_Location_column]: 7,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24, C[25] || CT.C25, C[26] || CT.C26], T._LocationL());
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 500000
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stuff",
+        [_Location_column]: 13,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onUpdate",
+        [_Location_column]: 13,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDelete",
+        [_Location_column]: 13,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31, C[32] || CT.C32], T._LocationL());
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 58,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.constList([C[35] || CT.C35], T._LocationL());
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[34] || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 57,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "horizontalOffset",
+        [_Location_column]: 9,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39], T._LocationL());
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "position",
+        [_Location_column]: 7,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "duration",
+        [_Location_column]: 7,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.constList([C[42] || CT.C42, C[43] || CT.C43, C[44] || CT.C44], T._LocationL());
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[41] || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.constList([], T._LocationL());
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[46] || CT.C46,
+        [_Location_name]: null,
+        [_Location_column]: 47,
+        [_Location_line]: 70,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stuff",
+        [_Location_column]: 58,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49], T._LocationL());
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 47,
+        [_Location_line]: 77,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/pages/home_page.dart"
+      });
+    }
+  }, false);
+  var C = Array(50).fill(void 0);
+  var I = ["package:memstuff/pages/home_page.dart"];
+  home_page.HomePage = class HomePage extends framework.StatefulWidget {
+    createState() {
+      return new home_page._HomePageState.new();
+    }
+  };
+  (home_page.HomePage.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    home_page.HomePage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = home_page.HomePage.prototype;
+  dart.addTypeTests(home_page.HomePage);
+  dart.addTypeCaches(home_page.HomePage);
+  dart.setMethodSignature(home_page.HomePage, () => ({
+    __proto__: dart.getMethods(home_page.HomePage.__proto__),
+    createState: dart.fnType(dart.legacy(home_page._HomePageState), [])
+  }));
+  dart.setLibraryUri(home_page.HomePage, I[0]);
+  var _controller = dart.privateName(home_page, "_controller");
+  var _initialize = dart.privateName(home_page, "_initialize");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _onCreate = dart.privateName(home_page, "_onCreate");
+  var _buildStuffCard = dart.privateName(home_page, "_buildStuffCard");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var _onUpdate = dart.privateName(home_page, "_onUpdate");
+  var _onDelete = dart.privateName(home_page, "_onDelete");
+  var _onDeleteUndo = dart.privateName(home_page, "_onDeleteUndo");
+  home_page._HomePageState = class _HomePageState extends framework.State$(dart.legacy(home_page.HomePage)) {
+    initState() {
+      this[_initialize]();
+      super.initState();
+    }
+    [_initialize]() {
+      return async.async(dart.dynamic, (function* _initialize() {
+        yield this[_controller].readAll();
+        this.setState(dart.fn(() => {
+        }, T.VoidToNull()));
+      }).bind(this));
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Emprestimos Feitos :", {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), floatingActionButton: new floating_action_button.FloatingActionButton.new({child: new icon.Icon.new(icons.Icons.add, {$creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), onPressed: dart.bind(this, _onCreate), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), body: new refresh_indicator.RefreshIndicator.new({onRefresh: dart.bind(this, _initialize), child: new stuff_listview.StuffListView.new({loading: this[_controller].loading, itemCount: this[_controller].length, itemBuilder: dart.bind(this, _buildStuffCard), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), $creationLocationd_0dea112b090073317d4: C[22] || CT.C22});
+    }
+    [_buildStuffCard](context, index) {
+      let stuff = this[_controller].stuffs[$_get](index);
+      return new animation_configuration.AnimationConfiguration.staggeredList({position: index, duration: C[27] || CT.C27, child: new slide_animation.SlideAnimation.new({horizontalOffset: 150.0, child: new fade_in_animation.FadeInAnimation.new({child: new stuff_card.StuffCard.new({stuff: stuff, onUpdate: dart.fn(() => this[_onUpdate](stuff), T.VoidTodynamic()), onDelete: dart.fn(() => this[_onDelete](stuff), T.VoidTodynamic()), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), $creationLocationd_0dea112b090073317d4: C[33] || CT.C33}), $creationLocationd_0dea112b090073317d4: C[36] || CT.C36}), $creationLocationd_0dea112b090073317d4: C[40] || CT.C40});
+    }
+    [_onCreate]() {
+      return async.async(dart.dynamic, (function* _onCreate() {
+        yield navigator.Navigator.of(this.context).push(dart.dynamic, new page.MaterialPageRoute.new({builder: dart.fn(context => new detail_page.DetailPage.new({$creationLocationd_0dea112b090073317d4: C[45] || CT.C45}), T.BuildContextLToDetailPageL())}));
+        this[_initialize]();
+      }).bind(this));
+    }
+    [_onUpdate](stuff) {
+      return async.async(dart.dynamic, (function* _onUpdate() {
+        yield navigator.Navigator.of(this.context).push(dart.dynamic, new page.MaterialPageRoute.new({builder: dart.fn(context => new detail_page.DetailPage.new({stuff: stuff, $creationLocationd_0dea112b090073317d4: C[47] || CT.C47}), T.BuildContextLToDetailPageL())}));
+        this[_initialize]();
+      }).bind(this));
+    }
+    [_onDelete](stuff) {
+      return async.async(dart.dynamic, (function* _onDelete() {
+        yield this[_controller].delete(stuff);
+        this[_initialize]();
+        snackbar_helper.SnackbarHelper.showDeleteMessage({context: this.context, message: dart.str(stuff.description) + " Excluído!", onPressed: dart.fn(() => this[_onDeleteUndo](stuff), T.VoidTodynamic())});
+      }).bind(this));
+    }
+    [_onDeleteUndo](stuff) {
+      return async.async(dart.dynamic, (function* _onDeleteUndo() {
+        yield this[_controller].undo(stuff);
+        this[_initialize]();
+      }).bind(this));
+    }
+  };
+  (home_page._HomePageState.new = function() {
+    this[_controller] = new home_controller.HomeController.new(new stuff_repository_impl.StuffRepositoryImpl.new());
+    home_page._HomePageState.__proto__.new.call(this);
+    ;
+  }).prototype = home_page._HomePageState.prototype;
+  dart.addTypeTests(home_page._HomePageState);
+  dart.addTypeCaches(home_page._HomePageState);
+  dart.setMethodSignature(home_page._HomePageState, () => ({
+    __proto__: dart.getMethods(home_page._HomePageState.__proto__),
+    [_initialize]: dart.fnType(dart.legacy(async.Future), []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    [_buildStuffCard]: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext), dart.legacy(core.int)]),
+    [_onCreate]: dart.fnType(dart.dynamic, []),
+    [_onUpdate]: dart.fnType(dart.dynamic, [dart.legacy(stuff_model.StuffModel)]),
+    [_onDelete]: dart.fnType(dart.dynamic, [dart.legacy(stuff_model.StuffModel)]),
+    [_onDeleteUndo]: dart.fnType(dart.dynamic, [dart.legacy(stuff_model.StuffModel)])
+  }));
+  dart.setLibraryUri(home_page._HomePageState, I[0]);
+  dart.setFieldSignature(home_page._HomePageState, () => ({
+    __proto__: dart.getFields(home_page._HomePageState.__proto__),
+    [_controller]: dart.finalFieldType(dart.legacy(home_controller.HomeController))
+  }));
+  dart.trackLibraries("packages/memstuff/pages/home_page.dart", {
+    "package:memstuff/pages/home_page.dart": home_page
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["home_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAakC;IAAgB;;;;;;EAClD;;;;;;;;;;;;;;;;;;;;;;;AAOiB,MAAb;AACiB,MAAX;IACR;;AAEkB;AACW,QAA3B,MAAM,AAAY;AACH,QAAf,cAAS;;MACX;;UAG0B;AACxB,YAAO,oCACG,+BAAc,mLACA,4DACb,kBAAW,gGACP,iFAEP,iEACO,2BACJ,+CACI,AAAY,sCACV,AAAY,iDACV;IAIrB;sBAEoC,SAAa;AACzC,kBAAQ,AAAY,AAAM,gCAAC,KAAK;AACtC,YAA8B,6EAClB,KAAK,oCAER,0DACa,cACX,kDACE,qCACE,KAAK,YACF,cAAM,gBAAU,KAAK,iCACrB,cAAM,gBAAU,KAAK;IAKzC;;AAES;AAGN,QAFD,MAAgB,AAAY,uBAAT,iCACjB,yCAA2B,QAAC,WAAY;AAE7B,QAAb;MACF;;gBAEqB;AAAZ;AAGN,QAFD,MAAgB,AAAY,uBAAT,iCACjB,yCAA2B,QAAC,WAAY,uCAAkB,KAAK;AAEpD,QAAb;MACF;;gBAEqB;AAAZ;AACwB,QAA/B,MAAM,AAAY,yBAAO,KAAK;AACjB,QAAb;AAKC,QAJc,2DACJ,uBACgC,SAA7B,AAAM,KAAD,gBAAa,yBACnB,cAAM,oBAAc,KAAK;MAExC;;oBAEyB;AAAZ;AACkB,QAA7B,MAAM,AAAY,uBAAK,KAAK;AACf,QAAb;MACF;;;;IA7EM,oBAAc,uCAAe;;;EA8ErC","file":"../../../../../../../../packages/memstuff/pages/home_page.dart.lib.js"}');
+  // Exports:
+  return {
+    pages__home_page: home_page
+  };
+}));
+
+//# sourceMappingURL=home_page.dart.lib.js.map

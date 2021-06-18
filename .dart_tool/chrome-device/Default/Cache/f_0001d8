@@ -1,0 +1,358 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/image_picker/image_picker.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/image_picker_platform_interface/src/types/image_source.dart'], (function load__packages__memstuff__widgets__photo_input_area_dart(dart_sdk, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__image_picker__image_picker$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__painting__box_fit$46dart, packages__image_picker_platform_interface__src__types__image_source$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const io = dart_sdk.io;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const image_picker = packages__image_picker__image_picker$46dart.image_picker;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  const image_source = packages__image_picker_platform_interface__src__types__image_source$46dart.src__types__image_source;
+  var photo_input_area = Object.create(dart.library);
+  var $isNotEmpty = dartx.isNotEmpty;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 60985
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 26,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 19,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], T._LocationL());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 50,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/widgets/photo_input_area.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "file",
+        [_Location_column]: 28,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 36,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/widgets/photo_input_area.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 48,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/widgets/photo_input_area.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 9,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 9,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 42,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/widgets/photo_input_area.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/otavi/Documents/_Fatec/programacao-kleber/memstuff-app3/lib/widgets/photo_input_area.dart"
+      });
+    }
+  }, false);
+  var C = Array(22).fill(void 0);
+  var I = ["package:memstuff/widgets/photo_input_area.dart"];
+  var height$ = dart.privateName(photo_input_area, "PhotoInputArea.height");
+  var radius$ = dart.privateName(photo_input_area, "PhotoInputArea.radius");
+  var icon$ = dart.privateName(photo_input_area, "PhotoInputArea.icon");
+  var onChanged$ = dart.privateName(photo_input_area, "PhotoInputArea.onChanged");
+  var initialValue$ = dart.privateName(photo_input_area, "PhotoInputArea.initialValue");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  photo_input_area.PhotoInputArea = class PhotoInputArea extends framework.StatefulWidget {
+    get height() {
+      return this[height$];
+    }
+    set height(value) {
+      super.height = value;
+    }
+    get radius() {
+      return this[radius$];
+    }
+    set radius(value) {
+      super.radius = value;
+    }
+    get icon() {
+      return this[icon$];
+    }
+    set icon(value) {
+      super.icon = value;
+    }
+    get onChanged() {
+      return this[onChanged$];
+    }
+    set onChanged(value) {
+      super.onChanged = value;
+    }
+    get initialValue() {
+      return this[initialValue$];
+    }
+    set initialValue(value) {
+      super.initialValue = value;
+    }
+    createState() {
+      return new photo_input_area._PhotoInputAreaState.new();
+    }
+  };
+  (photo_input_area.PhotoInputArea.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let height = opts && 'height' in opts ? opts.height : 200;
+    let radius = opts && 'radius' in opts ? opts.radius : 10;
+    let initialValue = opts && 'initialValue' in opts ? opts.initialValue : null;
+    let icon = opts && 'icon' in opts ? opts.icon : C[0] || CT.C0;
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[height$] = height;
+    this[radius$] = radius;
+    this[initialValue$] = initialValue;
+    this[icon$] = icon;
+    this[onChanged$] = onChanged;
+    photo_input_area.PhotoInputArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = photo_input_area.PhotoInputArea.prototype;
+  dart.addTypeTests(photo_input_area.PhotoInputArea);
+  dart.addTypeCaches(photo_input_area.PhotoInputArea);
+  dart.setMethodSignature(photo_input_area.PhotoInputArea, () => ({
+    __proto__: dart.getMethods(photo_input_area.PhotoInputArea.__proto__),
+    createState: dart.fnType(dart.legacy(photo_input_area._PhotoInputAreaState), [])
+  }));
+  dart.setLibraryUri(photo_input_area.PhotoInputArea, I[0]);
+  dart.setFieldSignature(photo_input_area.PhotoInputArea, () => ({
+    __proto__: dart.getFields(photo_input_area.PhotoInputArea.__proto__),
+    height: dart.finalFieldType(dart.legacy(core.double)),
+    radius: dart.finalFieldType(dart.legacy(core.double)),
+    icon: dart.finalFieldType(dart.legacy(icon_data.IconData)),
+    onChanged: dart.finalFieldType(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.String)]))),
+    initialValue: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var _picker = dart.privateName(photo_input_area, "_picker");
+  var _image = dart.privateName(photo_input_area, "_image");
+  var _onCapturePhoto = dart.privateName(photo_input_area, "_onCapturePhoto");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  photo_input_area._PhotoInputAreaState = class _PhotoInputAreaState extends framework.State$(dart.legacy(photo_input_area.PhotoInputArea)) {
+    initState() {
+      if (this.widget.initialValue != null && this.widget.initialValue[$isNotEmpty]) {
+        this[_image] = io.File.new(this.widget.initialValue);
+      }
+      super.initState();
+    }
+    build(context) {
+      return new ink_well.InkWell.new({onTap: dart.bind(this, _onCapturePhoto), child: new container.Container.new({height: this.widget.height, decoration: new box_decoration.BoxDecoration.new({border: box_border.Border.all({color: colors.Colors.black26}), borderRadius: new border_radius.BorderRadius.circular(this.widget.radius)}), child: new basic.Center.new({child: this[_image] == null ? new icon.Icon.new(this.widget.icon, {size: dart.notNull(this.widget.height) * 0.3, color: colors.Colors.black26, $creationLocationd_0dea112b090073317d4: C[1] || CT.C1}) : new image.Image.file(this[_image], {fit: box_fit.BoxFit.cover, $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18});
+    }
+    [_onCapturePhoto]() {
+      return async.async(dart.dynamic, (function* _onCapturePhoto() {
+        let t1, t0;
+        let file = (yield this[_picker].getImage({source: image_source.ImageSource.camera}));
+        if (file != null) {
+          this.setState(dart.fn(() => {
+            this[_image] = io.File.new(file.path);
+          }, T.VoidToNull()));
+          t0 = this.widget;
+          t1 = file.path;
+          t0.onChanged(t1);
+        }
+      }).bind(this));
+    }
+  };
+  (photo_input_area._PhotoInputAreaState.new = function() {
+    this[_picker] = new image_picker.ImagePicker.new();
+    this[_image] = null;
+    photo_input_area._PhotoInputAreaState.__proto__.new.call(this);
+    ;
+  }).prototype = photo_input_area._PhotoInputAreaState.prototype;
+  dart.addTypeTests(photo_input_area._PhotoInputAreaState);
+  dart.addTypeCaches(photo_input_area._PhotoInputAreaState);
+  dart.setMethodSignature(photo_input_area._PhotoInputAreaState, () => ({
+    __proto__: dart.getMethods(photo_input_area._PhotoInputAreaState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    [_onCapturePhoto]: dart.fnType(dart.legacy(async.Future), [])
+  }));
+  dart.setLibraryUri(photo_input_area._PhotoInputAreaState, I[0]);
+  dart.setFieldSignature(photo_input_area._PhotoInputAreaState, () => ({
+    __proto__: dart.getFields(photo_input_area._PhotoInputAreaState.__proto__),
+    [_picker]: dart.finalFieldType(dart.legacy(image_picker.ImagePicker)),
+    [_image]: dart.fieldType(dart.legacy(io.File))
+  }));
+  dart.trackLibraries("packages/memstuff/widgets/photo_input_area.dart", {
+    "package:memstuff/widgets/photo_input_area.dart": photo_input_area
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["photo_input_area.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMe;;;;;;IACA;;;;;;IACE;;;;;;IACQ;;;;;;IACV;;;;;;;AAYyB;IAAsB;;;QATtD;QACC;QACA;QACA;QACA;QACA;;IAJA;IACA;IACA;IACA;IACA;AACF,mEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;AAYlB,UAAI,AAAO,oCAAwB,AAAO,AAAa;AACnB,QAAlC,eAAS,YAAK,AAAO;;AAEN,MAAX;IACR;UAG0B;AACxB,YAAO,4CACE,+BACA,qCACG,AAAO,gCACH,8CACK,8BAAkB,uCACN,wCAAS,AAAO,8BAEtC,6BACE,AAAO,uBACR,kBACE,AAAO,yBACa,aAAd,AAAO,sBAAS,YACR,iFAEV,qBAAK,oBAAoB;IAI7C;;AAEsB;;AACd,oBAAO,MAAM,AAAQ,gCAA6B;AACxD,YAAI,IAAI;AAGJ,UAFF,cAAS;AACiB,YAAxB,eAAS,YAAK,AAAK,IAAD;;AAEO,eAA3B;eAAiB,AAAK,IAAD;UAAL;;MAEpB;;;;IA1CM,gBAAU;IACX;;;EA0CP","file":"../../../../../../../../packages/memstuff/widgets/photo_input_area.dart.lib.js"}');
+  // Exports:
+  return {
+    widgets__photo_input_area: photo_input_area
+  };
+}));
+
+//# sourceMappingURL=photo_input_area.dart.lib.js.map
